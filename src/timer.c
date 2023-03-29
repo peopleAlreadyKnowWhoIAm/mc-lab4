@@ -11,7 +11,7 @@ void initTimer0(enum TimerPrescaller prescaller, uint8_t period,
   timer_handler = handler;
   // Config timer to CTC mode with OCSR0A
   TCCR0A = _BV(WGM01);
-  TCCR0B = _BV(WGM02) | prescaller;
+  TCCR0B = prescaller;
 
   OCR0A = period;
 
